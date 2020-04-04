@@ -24,7 +24,7 @@ export default class Form extends Component {
       firstname: "",
       lastname: "",
       company: "",
-      email: ""
+      email: "",
     };
     this.onChangeLast = this.onChangeLast.bind(this);
     this.onChangeMiddle = this.onChangeMiddle.bind(this);
@@ -53,37 +53,37 @@ export default class Form extends Component {
 
   onChangeEmail(e) {
     this.setState({
-      email: e.target.value
+      email: e.target.value,
     });
   }
   onChangeCompany(e) {
     this.setState({
-      company: e.target.value
+      company: e.target.value,
     });
   }
   onChangeFirstname(e) {
     this.setState({
-      firstname: e.target.value
+      firstname: e.target.value,
     });
   }
   onChangeLastname(e) {
     this.setState({
-      lastname: e.target.value
+      lastname: e.target.value,
     });
   }
   onChangeLast(e) {
     this.setState({
-      last: e.target.value
+      last: e.target.value,
     });
   }
   onChangeMiddle(e) {
     this.setState({
-      middle: e.target.value
+      middle: e.target.value,
     });
   }
   onChangeFirst(e) {
     this.setState({
-      first: e.target.value
+      first: e.target.value,
     });
   }
 
@@ -91,7 +91,7 @@ export default class Form extends Component {
     document.getElementById("micBtnFirst").style.opacity = 0.4;
     this.setState(
       {
-        listening: true
+        listening: true,
       },
       this.handleListenFirst
     );
@@ -107,7 +107,7 @@ export default class Form extends Component {
     }
     recognition.onstart = () => {};
     let finalTranscript = "";
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
       let interimTranscript = "";
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -116,7 +116,7 @@ export default class Form extends Component {
         else {
           interimTranscript += transcript;
           this.setState({
-            first: interimTranscript
+            first: interimTranscript,
           });
         }
       }
@@ -126,13 +126,13 @@ export default class Form extends Component {
         const finalText = transcriptArr.join(" ");
         this.setState({
           listening: false,
-          first: finalText
+          first: finalText,
         });
       };
     };
-    recognition.onerror = event => {
+    recognition.onerror = (event) => {
       this.setState({
-        listening: false
+        listening: false,
       });
       document.getElementById("micBtnFirst").style.opacity = 1;
     };
@@ -142,7 +142,7 @@ export default class Form extends Component {
     document.getElementById("micBtnMiddle").style.opacity = 0.4;
     this.setState(
       {
-        listening: true
+        listening: true,
       },
       this.handleListenMiddle
     );
@@ -158,7 +158,7 @@ export default class Form extends Component {
     }
     recognition.onstart = () => {};
     let finalTranscript = "";
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
       let interimTranscript = "";
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -167,7 +167,7 @@ export default class Form extends Component {
         else {
           interimTranscript += transcript;
           this.setState({
-            middle: interimTranscript
+            middle: interimTranscript,
           });
         }
       }
@@ -177,13 +177,13 @@ export default class Form extends Component {
         const finalText = transcriptArr.join(" ");
         this.setState({
           listening: false,
-          middle: finalText
+          middle: finalText,
         });
       };
     };
-    recognition.onerror = event => {
+    recognition.onerror = (event) => {
       this.setState({
-        listening: false
+        listening: false,
       });
       document.getElementById("micBtnMiddle").style.opacity = 1;
     };
@@ -193,7 +193,7 @@ export default class Form extends Component {
     document.getElementById("micBtnLast").style.opacity = 0.4;
     this.setState(
       {
-        listening: true
+        listening: true,
       },
       this.handleListenLast
     );
@@ -209,7 +209,7 @@ export default class Form extends Component {
     }
     recognition.onstart = () => {};
     let finalTranscript = "";
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
       let interimTranscript = "";
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -218,7 +218,7 @@ export default class Form extends Component {
         else {
           interimTranscript += transcript;
           this.setState({
-            last: interimTranscript
+            last: interimTranscript,
           });
         }
       }
@@ -228,13 +228,13 @@ export default class Form extends Component {
         const finalText = transcriptArr.join(" ");
         this.setState({
           listening: false,
-          last: finalText
+          last: finalText,
         });
       };
     };
-    recognition.onerror = event => {
+    recognition.onerror = (event) => {
       this.setState({
-        listening: false
+        listening: false,
       });
       document.getElementById("micBtnLast").style.opacity = 1;
     };
@@ -244,7 +244,7 @@ export default class Form extends Component {
     document.getElementById("micBtnFirstname").style.opacity = 0.4;
     this.setState(
       {
-        listening: true
+        listening: true,
       },
       this.handleListenFirstname
     );
@@ -260,7 +260,7 @@ export default class Form extends Component {
     }
     recognition.onstart = () => {};
     let finalTranscript = "";
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
       let interimTranscript = "";
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -269,7 +269,7 @@ export default class Form extends Component {
         else {
           interimTranscript += transcript;
           this.setState({
-            firstname: interimTranscript
+            firstname: interimTranscript,
           });
         }
       }
@@ -279,23 +279,23 @@ export default class Form extends Component {
         const finalText = transcriptArr.join(" ");
         this.setState({
           listening: false,
-          firstname: finalText
+          firstname: finalText,
         });
       };
     };
-    recognition.onerror = event => {
+    recognition.onerror = (event) => {
       this.setState({
-        listening: false
+        listening: false,
       });
       document.getElementById("micBtnFirstname").style.opacity = 1;
     };
   }
 
   toggleListenLastname() {
-    document.getElementById("micBtnFirstname").style.opacity = 0.4;
+    document.getElementById("micBtnLastname").style.opacity = 0.4;
     this.setState(
       {
-        listening: true
+        listening: true,
       },
       this.handleListenLastname
     );
@@ -311,7 +311,7 @@ export default class Form extends Component {
     }
     recognition.onstart = () => {};
     let finalTranscript = "";
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
       let interimTranscript = "";
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -320,7 +320,7 @@ export default class Form extends Component {
         else {
           interimTranscript += transcript;
           this.setState({
-            lastname: interimTranscript
+            lastname: interimTranscript,
           });
         }
       }
@@ -330,13 +330,13 @@ export default class Form extends Component {
         const finalText = transcriptArr.join(" ");
         this.setState({
           listening: false,
-          lastname: finalText
+          lastname: finalText,
         });
       };
     };
-    recognition.onerror = event => {
+    recognition.onerror = (event) => {
       this.setState({
-        listening: false
+        listening: false,
       });
       document.getElementById("micBtnLastname").style.opacity = 1;
     };
@@ -346,7 +346,7 @@ export default class Form extends Component {
     document.getElementById("micBtnEmail").style.opacity = 0.4;
     this.setState(
       {
-        listening: true
+        listening: true,
       },
       this.handleListenEmail
     );
@@ -362,7 +362,7 @@ export default class Form extends Component {
     }
     recognition.onstart = () => {};
     let finalTranscript = "";
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
       let interimTranscript = "";
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -371,7 +371,7 @@ export default class Form extends Component {
         else {
           interimTranscript += transcript;
           this.setState({
-            email: interimTranscript
+            email: interimTranscript,
           });
         }
       }
@@ -381,13 +381,13 @@ export default class Form extends Component {
         const finalText = transcriptArr.join(" ");
         this.setState({
           listening: false,
-          email: finalText
+          email: finalText,
         });
       };
     };
-    recognition.onerror = event => {
+    recognition.onerror = (event) => {
       this.setState({
-        listening: false
+        listening: false,
       });
       document.getElementById("micBtnEmail").style.opacity = 1;
     };
@@ -397,7 +397,7 @@ export default class Form extends Component {
     document.getElementById("micBtnCompany").style.opacity = 0.4;
     this.setState(
       {
-        listening: true
+        listening: true,
       },
       this.handleListenCompany
     );
@@ -413,7 +413,7 @@ export default class Form extends Component {
     }
     recognition.onstart = () => {};
     let finalTranscript = "";
-    recognition.onresult = event => {
+    recognition.onresult = (event) => {
       let interimTranscript = "";
 
       for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -422,7 +422,7 @@ export default class Form extends Component {
         else {
           interimTranscript += transcript;
           this.setState({
-            company: interimTranscript
+            company: interimTranscript,
           });
         }
       }
@@ -432,13 +432,13 @@ export default class Form extends Component {
         const finalText = transcriptArr.join(" ");
         this.setState({
           listening: false,
-          company: finalText
+          company: finalText,
         });
       };
     };
-    recognition.onerror = event => {
+    recognition.onerror = (event) => {
       this.setState({
-        listening: false
+        listening: false,
       });
       document.getElementById("micBtnCompany").style.opacity = 1;
     };
